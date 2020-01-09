@@ -8,6 +8,9 @@ headingnames = ['preg','plas','pres','skin','test',
 
 dataframe = pandas.read_csv(filename, names=headingnames)
 
-dataframe.plot(kind='box', subplots=True, layout=(3,3), sharex=False)
-
+#box in each graph represent middle 50% data i.e. 25% to 75%
+#line in each box represent 50 percentile
+#circles in graph represent to much deviated data
+dataframe.head()
+dataframe.plot(kind='box', subplots=True, layout=(3,3), sharex=False, sharey=False)
 plt.show()
