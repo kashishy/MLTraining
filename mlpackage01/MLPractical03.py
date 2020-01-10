@@ -1,4 +1,4 @@
-import csv
+import csv  #extrnal Linking
 filename = open('indians-diabetes.data.csv', 'r')
 reader = csv.reader(filename, delimiter=',')
 lines = list(reader)

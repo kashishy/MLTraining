@@ -8,12 +8,12 @@ from matplotlib import pyplot as plt
 import pandas as pd
 import numpy
 
-#this is important with web based editors
+#this is important with web based editors, decide size of the display
 pd.set_option('display.width',1000)
 #for setting number of columns will show in output
-pd.set_option('display.max_column',9)
+pd.set_option('display.max_column', 9)
 
-hnames = ['preg','plas','pres','skin','test','mass','pedi','age','class']
+hnames = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
 
 dataframe = pd.read_csv('indians-diabetes.data.csv', names=hnames)
 
