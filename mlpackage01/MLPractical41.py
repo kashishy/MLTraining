@@ -49,6 +49,6 @@ if __name__ == '__main__':
     x, y = get_data('LR_House_price.csv')
     question_value = 700  # This is the question
     result = linear_model_main(x, y, question_value)
-    print("Intercept value ", result['intercept'])
-    print("Coefficient ", result['coefficient'])
-    print("Predicted House Value : ", result['predicted_ans'])
+    print("Intercept value(c) : ", result['intercept'])
+    print("Coefficient(m) : ", result['coefficient'])
+    print("Predicted House Value(y) : ", result['predicted_ans'])
