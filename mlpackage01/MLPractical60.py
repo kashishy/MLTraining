@@ -21,10 +21,11 @@ Y = array[:, 8]
 
 estimators = []
 estimators.append(("standardize", StandardScaler()))
-estimators.append(("lda", LinearDiscriminantAnalysis()))
+estimators.append(("lda", LinearDiscriminantAnalysis())) # we can use LogisticRegression instead of LDA
 pipelineModel = Pipeline(estimators)
+print(pipelineModel)
 
 kfold = KFold(n_splits=10, random_state=7)
 results = cross_val_score(pipelineModel, X, Y, cv=kfold)
 
-print("Accuracy: %.2f %%"% (results.mean()*100))
+print("Accuracy: %.2f %%" % (results.mean()*100))
