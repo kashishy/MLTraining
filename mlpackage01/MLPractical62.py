@@ -1,4 +1,6 @@
-from copy import deepcopy
+# Unsupervised learning ML Algorithm
+# K-Means Algorithm
+from copy import deepcopy # for copying one matrix into another
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -9,11 +11,11 @@ warnings.filterwarnings(action="ignore")
 # plt.rcParams['figure.figsize'] = (8,6)
 # Importing the dataset
 
-data = pd.read_csv('KMeansData.csv')
-print("input data and shape")
+filename = 'KMeansData.csv'
+data = pd.read_csv(filename)
+print("Input data and Shape")
 print(data.shape)
 print(data.head())
-
 
 # getting the values and plotting
 f1 = data["V1"].values
@@ -22,13 +24,15 @@ f2 = data["V2"].values
 plt.scatter(f1, f2, c="black", s=10)
 plt.show()
 
+# combined list array of f1 and f2
 X = np.array(list(zip(f1, f2)))
 
 print(X)
 
+
 # Euclidean Distance Calculation
 def eu_dist(a, b, ax=1):
-    return np.linalg.norm(a-b, axis=ax)
+    return np.linalg.norm(a-b, axis=ax) # axis for vertical calculation on the matrix
 
 # Number of clusters
 k = 3
@@ -59,8 +63,9 @@ clusters = np.zeros(len(X))
 
 print("clusters = ", clusters)
 # Error function - Distamce between two centroids(new and old)
-error = eu_dist(C,C_old)
+error = eu_dist(C, C_old)
 print("Error before loop", error)
+"""
 # Loop will run till the error becomes zero
 while error.all():   # error! = 0
     # Assigning each value to its closest cluster
@@ -86,3 +91,4 @@ ax.scatter(C[:, 0], C[:, 1], marker="*", s=100, c='y')
 
 print("Final Centroid ", C)
 plt.show()
+"""
